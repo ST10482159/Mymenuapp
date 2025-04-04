@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
 
                 Divider()
 
-
+                // time of day
                 OutlinedTextField(
                     value = timeOfDay,
                     onValueChange = { text -> timeOfDay = text
@@ -69,6 +69,7 @@ class MainActivity : ComponentActivity() {
                 Spacer(modifier = Modifier.size(30.dp))
 
                 Row {
+                    // suggest button
                     Button(onClick = {
                         mealSelected= when(timeOfDay){
                             "Morning" -> "Cereal"
@@ -76,6 +77,8 @@ class MainActivity : ComponentActivity() {
                              "Afternoon" -> "Sushi"
                               "Afternoon snack" -> "Yoghurt"
                               "Dinner" -> "Fried chicken"
+                               "After dinner" -> "ice cream"
+
 
                             else -> {"invalid "}
                         }
@@ -84,7 +87,13 @@ class MainActivity : ComponentActivity() {
                         Text(text = "SUGGEST")
                     }
 
-                    Button(onClick = { /*TODO*/ }) {
+                    // reset button
+                    Button(onClick = { /*TODO*/
+
+                     timeOfDay=""
+                     mealSelected=""
+
+                    }) {
                         Text(text = "RESET")
 
                     }
